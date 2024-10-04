@@ -1,1 +1,32 @@
-@import '~bootstrap/scss/bootstrap'
+@import '~bootstrap/scss/bootstrap';
+
+
+.sidebar {
+    width: 150px;
+    height: calc(100vh - 75px);
+    background-color: #333;
+    color: white;
+    float: left;
+}
+
+.content {
+    width: calc(100vw - 150px);
+    height: calc(100vh - 75px);
+    background-color: #f4f4f4;
+    padding: 10px;
+    float: left;
+}
+
+header {
+    height: 75px;
+    width: 100vw;
+    background-color: #444;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+main {
+    height: calc(100vh - 75px);
+}

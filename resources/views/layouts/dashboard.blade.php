@@ -11,12 +11,12 @@
 <body>
     <div>
         <div class="sidebar">
-
         </div>
         <div class="content">
-            <div class="header">
-                
-            </div>
+            @include('layouts.partials.header')
+            <main>
+                @yeld(main-content)
+            </main>
         </div>
     </div>
 </body>
