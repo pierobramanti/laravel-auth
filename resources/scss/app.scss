@@ -1,10 +1,18 @@
 @import '~bootstrap/scss/bootstrap';
 
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+@import 'partials/sidebar.scss';
+@import 'partials/navbar';
+
+body {
+    font-family: 'Oswald', sans-serif;
+}
+
 
 .sidebar {
     width: 150px;
     height: 100vh;
-    background-color: #000000;
     color: white;
 
 }
@@ -17,11 +25,13 @@
 
 header {
     height: 75px;
-    background-color: #000000;
-
-
 }
 
 main {
     height: calc(100% - 75px);
+}
+
+.bg-violet {
+    background-color: #261730;
+    ;
 }
