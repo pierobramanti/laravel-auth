@@ -28,6 +28,7 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     })->name('dashboard');
 
     Route::resource('/projects', ProjectController::class);
+    
 });
 
 

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
 
 @section('content')
     <div class="container py-5">
@@ -11,13 +11,14 @@
 
             <!-- Tabella Progetti -->
             <div class="col-12 mt-4">
-                <table class="table table-hover table-striped table-bordered">
+                <table class="table table-hover table-bordered">
                     <thead class="table-dark">
                         <tr>
                             <th scope="col">Title</th>
                             <th scope="col">Slug</th>
                             <th scope="col">Description</th>
                             <th scope="col">Date</th>
+                            <th scope="col">Actions</th> <!-- Colonna per il pulsante View -->
                         </tr>
                     </thead>
                     <tbody>
@@ -27,6 +28,10 @@
                             <td>{{ $project->slug }}</td>
                             <td>{{ $project->description }}</td>
                             <td>{{ $project->date }}</td>
+                            <td>
+                                <!-- Pulsante View -->
+                                <a href="{{ route('admin.projects.show', ['project' => $project->id]) }}" class="btn btn-info">View</a>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -35,4 +40,5 @@
         </div>
     </div>
 @endsection
+
 
