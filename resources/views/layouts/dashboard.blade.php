@@ -10,8 +10,7 @@
 </head>
 <body>
     <div class="d-flex">
-        <div class="sidebar">
-        </div>
+        @include('layouts.partials.sidebar')
         <div class="content">
             @include('layouts.partials.header')
             <main>
