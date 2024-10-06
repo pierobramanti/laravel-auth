@@ -3,19 +3,21 @@
 @section('content')
     <div class="container py-5">
         <div class="row">
-            <div class="col-12">
-                <h1 class="text-center">Projects List</h1>
+            <div class="col-12 text-center">
+                <h1 class="mb-4">Projects List</h1>
+                
+                <a href="" class="btn btn-primary mb-4">Aggiungi Progetto</a>
             </div>
 
-            <!-- Aggiungi qui la tabella -->
+            <!-- Tabella Progetti -->
             <div class="col-12 mt-4">
-                <table class="table table-striped table-bordered">
-                    <thead>
+                <table class="table table-hover table-striped table-bordered">
+                    <thead class="table-dark">
                         <tr>
-                            <th>Title</th>
-                            <th>Slug</th>
-                            <th>Description</th>
-                            <th>Date</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Slug</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Date</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -33,3 +35,4 @@
         </div>
     </div>
 @endsection
+
