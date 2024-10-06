@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str; 
 
 class Project extends Model
 {
@@ -16,4 +17,8 @@ class Project extends Model
         'date'
     ];
 
+    public static function generateSlug($title)
+    {
+        return Str::slug($title, '_'); 
+    }
 }
