@@ -37,13 +37,15 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-    $form_data = $request->all();
+     $form_data = $request->all();
+
+    $form_data['slug'] = Project::generateSlug($form_data['title'], '_');
     
     $project = new Project();
     $project->fill($form_data);
-
+    
     $project->save();
-
+    
     return redirect()->route('admin.projects.index');
     }
 
