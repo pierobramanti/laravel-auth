@@ -37,9 +37,9 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreProjectRequest $request)
     {
-     $form_data = $request->all();
+     $form_data = $request->validated();
 
     $form_data['slug'] = Project::generateSlug($form_data['title'], '_');
     
