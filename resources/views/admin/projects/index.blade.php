@@ -6,7 +6,7 @@
             <div class="col-12 text-center">
                 <h1 class="mb-4">Projects List</h1>
                 
-                <a href="" class="btn btn-primary mb-4">Aggiungi Progetto</a>
+                <a href="{{route('admin.projects.create')}}" class="btn btn-primary mb-4">Aggiungi Progetto</a>
             </div>
 
             <!-- Tabella Progetti -->
@@ -15,7 +15,6 @@
                     <thead class="table-dark">
                         <tr>
                             <th scope="col">Title</th>
-                            <th scope="col">Slug</th>
                             <th scope="col">Description</th>
                             <th scope="col">Date</th>
                             <th scope="col">Actions</th> <!-- Colonna per il pulsante View -->
@@ -25,7 +24,6 @@
                         @foreach ($projects as $project)
                         <tr>
                             <td>{{ $project->title }}</td>
-                            <td>{{ $project->slug }}</td>
                             <td>{{ $project->description }}</td>
                             <td>{{ $project->date }}</td>
                             <td>
