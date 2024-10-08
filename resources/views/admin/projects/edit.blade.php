@@ -24,6 +24,9 @@
                     <div class="col-12 mb-3">
                         <label for="title" class="control-label">Nome Progetto</label>
                         <input type="text" name="title" id="title" class="form-control" value="{{ old('title', $project->title) }}">
+                        @error('title')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="col-12 mb-3">
                         <label for="description" class="control-label">Descrizione</label>
@@ -32,6 +35,9 @@
                     <div class="col-12 mb-3">
                         <label for="date" class="control-label">Data</label>
                         <input type="date" name="date" id="date" class="form-control" value="{{ old('date', $project->date) }}">
+                        @error('date')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary">Salva Progetto</button>
@@ -43,3 +49,4 @@
 </div>
 
 @endsection
+

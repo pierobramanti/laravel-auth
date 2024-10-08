@@ -31,7 +31,7 @@ class UpdateProjectRequest extends FormRequest
         ];
     }
 
-    public function message(){
+    public function messages(){
         return[
             'title.required' => 'Il titolo è obbligatorio.',
             'title.max' => 'Il titolo non può superare i 255 caratteri.',
