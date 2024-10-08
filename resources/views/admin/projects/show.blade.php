@@ -22,16 +22,17 @@
                             <li><strong>Description:</strong> {{ $project->description ?? 'Nessuna descrizione disponibile' }}</li>
                             <li><strong>Date:</strong> {{ $project->date }}</li>
                         </ul>
-                        <form action="" method="POST" class="mt-3">
+                        <form action="{{ route('admin.projects.destroy', ['project' => $project->id]) }}" method="POST" class="mt-3">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger" onclick="return confirm('Sei sicuro di voler cancellare questo progetto?')">Elimina Progetto</button>
+                            <button type="submit" class="btn btn-danger delete-project" >Elimina Progetto</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    @include('admin.projects.partials.modal_delete')
 @endsection
 
 
