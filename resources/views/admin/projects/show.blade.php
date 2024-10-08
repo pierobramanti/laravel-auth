@@ -3,13 +3,13 @@
 @section('content')
     <div class="container py-5">
         <div class="row">
-            <div class="col-12 text-center">
+            <div class="col-12">
                 <h1 class="mb-4">{{ $project->title }}</h1>
             </div>
 
-            <div class="col-12 text-center">
-                <a href="" class="btn btn-secondary mb-4">Torna alla lista progetti</a>
-                <a href="" class="btn btn-warning mb-4">Modifica Progetto</a>
+            <div class="col-12 ">
+                <a href="{{route('admin.projects.index')}}" class="btn btn-secondary mb-4">Torna alla lista progetti</a>
+                <a href="{{ route('admin.projects.edit', ['project' => $project->id]) }}" class="btn btn-warning mb-4">Modifica Progetto</a>
             </div>
 
             <!-- Dettagli del Progetto -->

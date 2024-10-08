@@ -70,7 +70,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+        return view('admin.projects.edit', compact('project'));
     }
 
     /**
@@ -82,8 +82,15 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
-        //
+    $form_data = $request->all();
+
+    $form_data['slug'] = Project::generateSlug($form_data['title']);
+  
+    $project->save();
+
+    return redirect()->route('admin.projects.index');
     }
+
 
     /**
      * Remove the specified resource from storage.
