@@ -27,6 +27,7 @@ class UpdateProjectRequest extends FormRequest
             'title' => 'required|max:255',
             'description' => 'nullable|string',
             'date' => 'required|date',
+            'image'=>'nullable|image|max:4084'
         ];
     }
 
@@ -37,6 +38,8 @@ class UpdateProjectRequest extends FormRequest
             
             'date.required' => 'La data è obbligatoria.',
             'date.date' => 'La data deve essere in un formato valido.',
+            'image.image'=>'il file deve essere un\'immagine.',
+            'image.max'=>'il file deve essere grande al massimo :max kb'
         
         ];
     }
