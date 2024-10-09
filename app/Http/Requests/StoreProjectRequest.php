@@ -27,7 +27,6 @@ class StoreProjectRequest extends FormRequest
             'title' => 'required|max:255',
             'description' => 'nullable|string',
             'date' => 'required|date',
-            'slug' => 'nullable|max:255'
         ];
     }
 
@@ -39,8 +38,6 @@ class StoreProjectRequest extends FormRequest
             'date.required' => 'La data è obbligatoria.',
             'date.date' => 'La data deve essere in un formato valido.',
             
-            'slug.required' => 'Lo slug è obbligatorio.',
-            'slug.max' => 'Lo slug non può superare i 255 caratteri.',
         ];
     }
 }
