@@ -86,12 +86,22 @@ class ProjectController extends Controller
      * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateProjectRequest $request)
+    public function update(UpdateProjectRequest $request, Project $project)
     {
     $form_data = $request->validated();
 
+    if($request->hasFile('image')){
+        if($project->image != null){
+            Storage::delete($project->image);
+        }
+
+        $path = Storage::put('projects_image', $form_data['image']);
+        $form_data['image'] = $path;
+    }
+
     $form_data['slug'] = Project::generateSlug($form_data['title']);
-  
+
+    $project->fill($form_data);
     $project->save();
 
     return redirect()->route('admin.projects.index');
