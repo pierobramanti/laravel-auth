@@ -115,9 +115,13 @@ class ProjectController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Project $project)
-    {
-        $project->delete();
-
-        return redirect()->route('admin.projects.index');
+    {  
+    if($project->image !== null){
+        Storage::delete($project->image);
     }
+    $project->delete();
+
+    return redirect()->route('admin.projects.index');
+    }
+
 }
