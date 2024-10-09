@@ -21,26 +21,24 @@ class UpdateProjectRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
-    public function rules()
-    {
-        return [
-            'title' => 'required|max:255',
-            'description' => 'nullable|string',
-            'date' => 'required|date',
-            'image'=>'nullable|image|max:4084'
-        ];
-    }
-
-    public function messages(){
-        return[
-            'title.required' => 'Il titolo è obbligatorio.',
-            'title.max' => 'Il titolo non può superare i 255 caratteri.',
-            
-            'date.required' => 'La data è obbligatoria.',
-            'date.date' => 'La data deve essere in un formato valido.',
-            'image.image'=>'il file deve essere un\'immagine.',
-            'image.max'=>'il file deve essere grande al massimo :max kb'
-        
-        ];
+    
+     public function rules()
+     {
+         return [
+             'title' => 'required|max:255',
+             'description' => 'nullable|string',
+             'date' => 'required|date',
+         ];
+     }
+ 
+     public function messages(){
+         return[
+             'title.required' => 'Il titolo è obbligatorio.',
+             'title.max' => 'Il titolo non può superare i 255 caratteri.',
+             
+             'date.required' => 'La data è obbligatoria.',
+             'date.date' => 'La data deve essere in un formato valido.',
+             
+         ];
     }
 }
