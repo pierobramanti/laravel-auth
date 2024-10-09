@@ -29,6 +29,10 @@
                         <textarea name="description" id="description" class="form-control" rows="4" placeholder="Inserisci una descrizione (opzionale)">{{ old('description') }}</textarea>
                     </div>
                     <div class="col-12 mb-3">
+                        <label for="image" class="control-label">Immagine</label>
+                        <input type="file" name="image" id="image" class="form-control">
+                    </div>
+                    <div class="col-12 mb-3">
                         <label for="date" class="control-label">Data</label>
                         <input type="date" name="date" id="date" class="form-control" value="{{ old('date') }}" >
                     </div>
